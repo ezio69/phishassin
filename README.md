@@ -57,93 +57,179 @@
 * PHP
 * sudo
 
-# FOUND A BUG ? / HAVE ANY ISSUE ? :- (Read This)
-* Check closed & solved issues/bugs before opening new.
-* Make sure your issue is related to the codes and resources of this repository.
-* Its your responsibility to response on your opened issues.
-* If we don't found user response on his/her issue in the particular time interval , Then we have to close that issue.
-* Do Not Spam or Advertise & Respect Everyone.
+## HOW TO INSTALL
+### BlackArch official repository
+```
+sudo pacman -S hidden-eye
+```
+to run just use
+```
+sudo hidden-eye
+```
+### CLONE
+```
+git clone https://gitlab.com/an0nud4y/HiddenEye.git
+```
 
-### WHAT'S NEW FEATURES
-**1) LIVE ATTACK**
-- Now you will have live information about the victims such as : IP ADDRESS, Geolocation, ISP, Country, & many more.
+### RUNNING (In Linux)
+```
+chmod 777 HiddenEye
+```
 
-**2) COMPATIBILITY**
-- All the sites are mobile compatible.
+```
+sudo apt install python3-pip
+```
 
-**3) KEYLOGGER**
-- Now you will also have the ability to capture all the keystokes of victim.
-- You can now Deploy Keyloggers With (Y/N) option.
-- Major issues fixed.
+```
+cd HiddenEye
+```
 
-**4) ANDROID SUPPORT**
-- We care about Android Users, So now we have came with two ways to run HiddenEye in Android Devices.
+```
+sudo pip3 install -r requirements.txt
+```
 
-**(A) UserLand App**
-- You Have to Download UserLand App. [Click Here](https://play.google.com/store/apps/details?id=tech.ula) To Download it.
-- To read more how to set up userland app Read <a href="https://null-byte.wonderhowto.com/how-to/android-for-hackers-turn-android-phone-into-hacking-device-without-root-0189649/">HERE</a></p> 
+```
+sudo pip3 install requests
+```
 
-**(B) Termux App**
-  - You Have to Download Termux App. [Click Here](https://play.google.com/store/apps/details?id=com.termux) To Download it.
-  - For Further instruction [Check Instructions](https://gitlab.com/An0nUD4Y/hiddeneye/-/blob/master/instructions.md)
-  - Termux Users Clone With This Command , Unless Errors may occur during Running.
+```
+python3 HiddenEye.py
+
+```
+   OR
+
+```
+./HiddenEye.py    
+
+```
+### RUNNING (Arch Linux or Manjaro)
+```
+chmod 777 HiddenEye
+```
+
+```
+sudo pacman -Syu
+```
+```
+sudo pacman -S python-pip
+```
+
+```
+cd HiddenEye
+```
+
+```
+sudo pip3 install -r requirements.txt
+```
+
+```
+sudo python3 HiddenEye.py
+
+```
+   OR
+
+```
+sudo ./HiddenEye.py    
+
+```
+## FOR ANDROID USERS
+
+### 1) INSTALLING IN (USERLAND APP)
+
+```
+Install userland app from playstore.
+
+```
+
+```
+Set up app and install kali from app.Set ssh username(anyname) and password. 
+
+```
+
+```
+When kali will run it'll ask for password type the ssh password.Then do su.After that kali will run on your device wothout root and do apt update For more info read here (https://null-byte.wonderhowto.com/how-to/android-for-hackers-turn-android-phone-into-hacking-device-without-root-0189649/)
+
+```
+```
+sudo apt install python3 python3-pip unzip php git
+
+```
+```
+git clone https://gitlab.com/an0nud4y/HiddenEye.git
+
+```
+
+```
+chmod 777 HiddenEye
+```
+
+```
+cd HiddenEye
+
+```
+
+```
+pip3 install -r requirements.txt && pip3 install requests
+
+```
+
+```
+python3 HiddenEye.py
+```
+
+### 2) INSTALLING IN (TERMUX APP)
+
+```
+First install { Termux } from Playstore.
+
+```
+
+```
+After opening Follow below commands One by one
+
+```
+
+```
+pkg install git python php curl openssh grep
+
+```
+
 ```
 git clone -b Termux-Support-Branch https://gitlab.com/an0nud4y/HiddenEye.git
+```
 
 ```
-**5) NEW LOOK PROVIDED**
-- NOW FOCUS EASILY ON TASKS...
-- CUSTOMIZE APP WITH YOUR OWN THEMES
+chmod 777 HiddenEye
+```
 
-**6) SERVEO URL TYPE SELECTION AVAILABLE NOW**
-- Major issues with serveo is fixed.
-- Now You can choose out of CUSTOM URL and RANDOM URL.
+```
+pip install requests
+```
 
-**7) LARGE COLLECTION OF PHISHING PAGES ADDED**
-- Pages are taken from various tool including ShellPhish , Blackeye , SocialFish .
+```
+cd HiddenEye
+```
+```
+python HiddenEye.py
 
-**8) CAPTURED DATA BACKUP**
-- Backup of Data can be Found At (Server/CapturedData).
+or
 
-**9) EMAIL SUPPORT ADDED**
-- Captured Data can be Easily send to Any Email Address (Using Gmail SMTP).
-- It Require User's Gmail Username And Password.
-- GMAIL 2FA SHOULD BE DISABLED IN ORDER TO USE GMAIL SMTP.
-- LESS SECURED APPS SHOULD BE TURNED ON (https://myaccount.google.com/lesssecureapps).
+./HiddenEye.py
 
-**10) CUSTOM TEMPLATES ADDED**
-- Two Extra Custom Templates Added.
-- Now Create Your Templates.
-- Check Instructions At ( Webpages/CUSTOM/manual.txt )
-
-**11) TOOLS ADDED**
-
-**A) LOCATION (Accurately Locate Smartphones using Social Engineering) (Taken From https://github.com/thewhiteh4t/seeker)**
-  - NEAR YOU (By @thewhiteh4t )
-  - GDRIVE (By @thewhiteh4t)
-## [Check This](https://youtu.be/InSdtLhZzk4) Demonstration video to know How (Location) Social-Engineering-Tool Works.
- 
-## FOR FURTHER INSTALLATION PROCEDURE - [(CHECK INSTRUCTIONS)](https://gitlab.com/An0nUD4Y/hiddeneye/-/blob/master/instructions.md)
-
-</p>
-
-<h3>Ascii error fix</h3>
-
- `dpkg-reconfigure locales`
-
- `Then select: "All locales" Then select "en_US.UTF-8"`
-
-  `After that reboot your machine. Then open terminal and run the command: "locale"`
-
-  `There you will see "en_US.UTF-8" which is the default language. Instead of POSIX.`
-
-## DISCLAIMER
-<p align="center">
-  TO BE USED FOR EDUCATIONAL PURPOSES ONLY
-</p>
-
-The use of the phishassin is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program. Please read [LICENSE](LICENSE).
+```
+### ONE LINE COMMAND TO INSTALL IN TERMUX(ANDROID). Just copy/paste this single command and hit Enter .. ALL DONE
 
 
+```
+First install { Termux } from Playstore.
 
+```
 
+```
+After opening Copy and run this Single Command.
+
+```
+```
+pkg install git python php curl openssh grep && git clone -b Termux-Support-Branch https://gitlab.com/an0nud4y/HiddenEye.git && chmod 777 HiddenEye && cd HiddenEye && pip install -r requirements.txt && pip install requests && python HiddenEye.py
+
+```
