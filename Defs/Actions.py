@@ -1,5 +1,3 @@
-# Any actions must be here
-
 import getpass
 import base64
 from os import system, path
@@ -1044,7 +1042,7 @@ def endMessage(port):  # Message when HiddenEye exit
     choice = input(
         "\n\n{0}[{1}?{0}] Re-run(r) : Exit(x) : Send Email(M) : SelectServer(S)\n\n >> {2}".format(MAIN0, MAIN4, MAIN2)).upper()
     if choice == 'R' or choice == 'r':
-        system('sudo python3 HiddenEye.py')
+        system('python3 HiddenEye.py')
     elif choice == 'M' or choice == 'm':
         emailPrompt3(port)
     elif choice == 'S' or choice == 's':
