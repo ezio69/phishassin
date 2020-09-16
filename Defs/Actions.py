@@ -185,8 +185,8 @@ def selectServer(port):  # Question where user must select server
     system('clear')
     print(
         '''
-          {0}PHISASSIN
-          \n\n-------------------------------\n{0}[ HOST SERVER SELECTION ]{1}!! {0}\n-------------------------------'''.format(MAIN0, MAIN2))
+         " {0}PHISASSIN
+"          \n\n-------------------------------\n{0}[ HOST SERVER SELECTION ]{1}!! {0}\n-------------------------------'''.format(MAIN0, MAIN2))
     print(
         "\n {0}[{1}*{0}]{0}Select Any Available Server:{1}".format(MAIN0, MAIN4))
     print("\n {0}[{1}0{0}]{1}LOCALHOST {0} [LAN] \n {0}[{1}1{0}]{1}Ngrok\n {0} [WAN,PREFFERED] 
